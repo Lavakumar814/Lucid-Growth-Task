@@ -1,0 +1,15 @@
+!pip install langchain-experimental
+!pip install langchain_openai
+!pip install langchain_experimental
+import os
+os.environ["OPENAI_API_KEY"]="sk-******************NTMOz3r0CCoCk9ic1CV8"
+agents.agent_toolkits import create_csv_agent
+from langchain_openai import ChatOpenAI
+
+ Try setting a lower temperature and limiting response length
+llm = ChatOpenAI(temperature=0.3, max_tokens=50) 
+
+agent = create_csv_agent(llm ,"list.csv",verbose=True, allow_dangerous_code=True)
+
+ Potentially rephrase your prompt to be more concise
+agent.invoke("What's in the file")
